@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5AD6871-D544-4332-A729-A58195AE51E2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Lab4</RootNamespace>
+    <AssemblyName>Lab4</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller.cs" />
+    <Compile Include="CustomRandom.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="FallingObject.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="IdleLeft.cs" />
+    <Compile Include="IdleRight.cs" />
+    <Compile Include="IHealthEventObserver.cs" />
+    <Compile Include="IHealthEvents.cs" />
+    <Compile Include="IModel.cs" />
+    <Compile Include="IPoolable.cs" />
+    <Compile Include="IPositionChanged.cs" />
+    <Compile Include="IPositionChangeObserver.cs" />
+    <Compile Include="IRandom.cs" />
+    <Compile Include="IScoreUpdate.cs" />
+    <Compile Include="IScoreUpdateObserver.cs" />
+    <Compile Include="IStateObserver.cs" />
+    <Compile Include="IStateUpdate.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="Level1.cs" />
+    <Compile Include="LinkedList.cs" />
+    <Compile Include="MovingLeft.cs" />
+    <Compile Include="MovingRight.cs" />
+    <Compile Include="ObjectPool.cs" />
+    <Compile Include="Platform.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerState.cs" />
+    <Compile Include="PlayerStateMachine.cs" />
+    <Compile Include="IControllerLaunch.cs" />
+    <Compile Include="IControllerView.cs" />
+    <Compile Include="IView.cs" />
+    <Compile Include="Launcher.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="UI.cs" />
+    <Compile Include="View.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="sfml-audio">
+      <HintPath>..\..\..\SFML.Net-2.4 64\lib\sfml-audio.dll</HintPath>
+    </Reference>
+    <Reference Include="sfml-graphics">
+      <HintPath>..\..\..\SFML.Net-2.4 64\lib\sfml-graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="sfml-system">
+      <HintPath>..\..\..\SFML.Net-2.4 64\lib\sfml-system.dll</HintPath>
+    </Reference>
+    <Reference Include="sfml-window">
+      <HintPath>..\..\..\SFML.Net-2.4 64\lib\sfml-window.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="csfml-audio-2.dll" />
+    <Content Include="csfml-graphics-2.dll" />
+    <Content Include="csfml-system-2.dll" />
+    <Content Include="csfml-window-2.dll" />
+    <Content Include="openal32.dll" />
+    <Content Include="OpenTK.dll" />
+    <Content Include="sprites\floor.png" />
+    <Content Include="sprites\heart.png" />
+    <Content Include="sprites\meat.png" />
+    <Content Include="sprites\Objects\fireball.png" />
+    <Content Include="sprites\fireball2.png" />
+    <Content Include="sprites\Objects\newPlaceholder.png" />
+    <Content Include="sprites\Objects\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
